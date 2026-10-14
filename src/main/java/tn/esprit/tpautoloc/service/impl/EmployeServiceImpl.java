@@ -54,6 +54,16 @@ public class EmployeServiceImpl implements IEmployeService {
         employeRepository.deleteById(id);
     }
 
+    @Override
+    public long count() {
+        return employeRepository.count();
+    }
+
+    @Override
+    public boolean existsById(Long id) {
+        return employeRepository.existsById(id);
+    }
+
     private void valider(Employe e) {
         if (e.getNom() == null || e.getNom().isBlank()) {
             throw new IllegalArgumentException("Le nom de l'employé est obligatoire");

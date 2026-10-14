@@ -14,4 +14,8 @@ public interface IAgenceService {
     Agence update(Long id, Agence agence);
 
     void deleteById(Long id);
+
+    long count();
+
+    boolean existsById(Long id);
 }

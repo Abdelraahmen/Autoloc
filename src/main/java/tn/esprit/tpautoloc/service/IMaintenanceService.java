@@ -14,4 +14,8 @@ public interface IMaintenanceService {
     Maintenance update(Long id, Maintenance maintenance);
 
     void deleteById(Long id);
+
+    long count();
+
+    boolean existsById(Long id);
 }

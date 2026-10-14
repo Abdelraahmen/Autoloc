@@ -52,6 +52,16 @@ public class EquipementServiceImpl implements IEquipementService {
         equipementRepository.deleteById(id);
     }
 
+    @Override
+    public long count() {
+        return equipementRepository.count();
+    }
+
+    @Override
+    public boolean existsById(Long id) {
+        return equipementRepository.existsById(id);
+    }
+
     private void valider(Equipement e) {
         if (e.getLibelle() == null || e.getLibelle().isBlank()) {
             throw new IllegalArgumentException("Le libellé de l'équipement est obligatoire");

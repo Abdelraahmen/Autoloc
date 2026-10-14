@@ -14,4 +14,8 @@ public interface IEquipementService {
     Equipement update(Long id, Equipement equipement);
 
     void deleteById(Long id);
+
+    long count();
+
+    boolean existsById(Long id);
 }

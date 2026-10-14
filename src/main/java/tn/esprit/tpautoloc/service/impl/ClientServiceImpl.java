@@ -57,6 +57,16 @@ public class ClientServiceImpl implements IClientService {
         clientRepository.deleteById(id);
     }
 
+    @Override
+    public long count() {
+        return clientRepository.count();
+    }
+
+    @Override
+    public boolean existsById(Long id) {
+        return clientRepository.existsById(id);
+    }
+
     private void valider(Client e) {
         if (e.getNom() == null || e.getNom().isBlank()) {
             throw new IllegalArgumentException("Le nom du client est obligatoire");

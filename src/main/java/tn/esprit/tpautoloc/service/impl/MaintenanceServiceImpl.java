@@ -54,6 +54,16 @@ public class MaintenanceServiceImpl implements IMaintenanceService {
         maintenanceRepository.deleteById(id);
     }
 
+    @Override
+    public long count() {
+        return maintenanceRepository.count();
+    }
+
+    @Override
+    public boolean existsById(Long id) {
+        return maintenanceRepository.existsById(id);
+    }
+
     private void valider(Maintenance e) {
         if (e.getDateDebut() != null && e.getDateFin() != null
                 && e.getDateFin().isBefore(e.getDateDebut())) {

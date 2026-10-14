@@ -55,6 +55,16 @@ public class AgenceServiceImpl implements IAgenceService {
         agenceRepository.deleteById(id);
     }
 
+    @Override
+    public long count() {
+        return agenceRepository.count();
+    }
+
+    @Override
+    public boolean existsById(Long id) {
+        return agenceRepository.existsById(id);
+    }
+
     private void valider(Agence e) {
         if (e.getNom() == null || e.getNom().isBlank()) {
             throw new IllegalArgumentException("Le nom de l'agence est obligatoire");
