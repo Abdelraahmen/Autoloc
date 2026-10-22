@@ -1,5 +1,7 @@
 package tn.esprit.tpautoloc.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -26,9 +28,11 @@ public class Contrat {
 
     private boolean valide;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "contrat")
     private Reservation reservation;
 
     @OneToMany(mappedBy = "contrat", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference("contrat-paiements")
     private List<Paiement> paiements = new ArrayList<>();
 }

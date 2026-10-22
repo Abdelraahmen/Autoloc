@@ -1,5 +1,6 @@
 package tn.esprit.tpautoloc.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -19,6 +20,7 @@ public class Equipement {
 
     private String libelle;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "equipements")
     private List<Vehicule> vehicules = new ArrayList<>();
 }

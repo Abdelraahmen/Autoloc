@@ -1,5 +1,6 @@
 package tn.esprit.tpautoloc.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -25,6 +26,7 @@ public class Client {
     private String numPermis;
     private LocalDate dateInscription;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "client")
     private List<Reservation> reservations = new ArrayList<>();
 }
